@@ -1,0 +1,22 @@
+{
+  "name": "mailer",
+  "version": "1.0.0",
+  "description": "node component to send emails",
+  "main": "index.js",
+  "scripts": {
+    "info": "echo 'mailer is a wrapper for node-mailer'",
+    "lint": "echo '=> linting' && jshint assets/scripts/*.js",
+    "test": "echo '=> testing' && mocha test/",
+    "pretest": "npm run lint -s"
+  },
+  "author": "Geovanny Ribeiro",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "jshint": "^2.8.0",
+    "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "nodemailer": "^1.10.0"
+  }
+}
