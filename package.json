@@ -1,7 +1,7 @@
 {
   "name": "mailer",
   "version": "1.0.0",
-  "description": "wrapper for node-mail to make even easier send emails",
+  "description": "node component to send emails",
   "main": "index.js",
   "scripts": {
     "info": "echo 'mailer is a wrapper for node-mailer'",
@@ -11,7 +11,8 @@
     "minify:css": "echo '=> minify:css' && cleancss assets/css/main.css -o dist/public/css/main.min.css",
     "build": "echo '=> building' && npm run test -s && npm run minify:js -s && npm run minify:css -s",
     "server": "http-server dist/public/",
-    "pretest": "npm run lint -s"
+    "pretest": "npm run lint -s",
+    "pre-commit": [ "lint"]
   },
   "author": "Geovanny Ribeiro",
   "license": "ISC",
