@@ -8,8 +8,7 @@
         if(!attributes || Object.getOwnPropertyNames(attributes).length === 0){
           throw new Error('Please, provide configuration!');
         }
-
-        console.log('wtf');
+        
         var mandatoryPropertiesSize = mandatoryProperties.length;
         var counter = 0;
 
