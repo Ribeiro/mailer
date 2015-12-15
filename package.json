@@ -1,7 +1,7 @@
 {
   "name": "mailer",
   "version": "1.0.0",
-  "description": "node component to send emails",
+  "description": "wrapper for node-mail to make even easier send emails",
   "main": "index.js",
   "scripts": {
     "info": "echo 'mailer is a wrapper for node-mailer'",
