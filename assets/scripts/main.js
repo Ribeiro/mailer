@@ -9,8 +9,6 @@
           throw new Error('Please, provide configuration!');
         }
 
-        console.log('WTF');
-
         var mandatoryPropertiesSize = mandatoryProperties.length;
         var counter = 0;
 

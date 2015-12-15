@@ -13,7 +13,7 @@
     "build": "echo '=> building' && npm run test -s && npm run minify:js -s && npm run minify:css -s",
     "server": "http-server dist/public/",
     "pretest": "npm run lint -s",
-    "pre-commit": [ "remove-console-logs", "lint"]
+    "pre-commit": ["remove-console-logs", "lint"]
   },
   "author": "Geovanny Ribeiro",
   "license": "ISC",
