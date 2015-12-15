@@ -9,7 +9,7 @@
           throw new Error('Please, provide configuration!');
         }
 
-debugger
+        console.log('wtf');
         var mandatoryPropertiesSize = mandatoryProperties.length;
         var counter = 0;
 
