@@ -2,31 +2,42 @@
   'use strict';
 
   var Mailer = function(config){
-    var assertNotMissing = function(attributes){
-      var mandatoryProperties = ['service', 'password', 'user'];
-        var errors = [];
-        if(!attributes || Object.getOwnPropertyNames(attributes).length === 0){
-          throw new Error('Please, provide configuration!');
-        }
 
-        var mandatoryPropertiesSize = mandatoryProperties.length;
-        var counter = 0;
+    var CONSTANTS = Object.freeze({
+        'property': 'Property ',
+        'isMissing': ' is missing!',
+        'mandatoryProperties': ['service', 'password', 'user'],
+        'separator': ';',
+        'provideConfigurationError': 'Please, provide configuration!',
+        'zero': 0
+    });
+
+    var assertValidInstanceOf = function(config){
+      if(!config || Object.getOwnPropertyNames(config).length === CONSTANTS.zero){
+        throw new Error(CONSTANTS.provideConfigurationError);
+      }
+    };
+
+    var assertValid = function(config){
+        assertValidInstanceOf(config);
+        var errors = [];
+        var mandatoryPropertiesSize = CONSTANTS.mandatoryProperties.length;
+        var counter = CONSTANTS.zero;
 
         while(counter < mandatoryPropertiesSize){
-          if (!attributes.hasOwnProperty(mandatoryProperties[counter])) {
-             errors.push('Property ' + mandatoryProperties[counter] +' is missing!');
+          if (!config.hasOwnProperty(CONSTANTS.mandatoryProperties[counter])) {
+             errors.push(CONSTANTS.property + CONSTANTS.mandatoryProperties[counter] + CONSTANTS.isMissing);
           }
-
           counter++;
         }
 
-        if(errors.length > 0){
-          throw new Error(errors.join(';'));
+        if(errors.length > CONSTANTS.zero){
+          throw new Error(errors.join(CONSTANTS.separator));
         }
 
     };
 
-    assertNotMissing(config);
+    assertValid(config);
     var service = config.service;
 
     return {
@@ -35,10 +46,6 @@
         }
     };
 
-  };
-
-  Mailer.prototype.getServiceName = function(){
-    return this.service;
   };
 
   exports.Mailer = Mailer;
